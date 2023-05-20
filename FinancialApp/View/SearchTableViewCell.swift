@@ -17,7 +17,15 @@ class SearchTableViewCell: UITableViewCell {
     
     
     
-    
+    func configure(searchResult:SearchResult){
+        
+        
+        assetNameLabel.text   = searchResult.name
+        assetSymbolLabel.text = searchResult.symbol
+        assetTypeLabel.text   = searchResult.type
+        
+        
+    }
     
     
 }
