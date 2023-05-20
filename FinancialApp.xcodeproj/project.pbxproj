@@ -17,6 +17,7 @@
 		CEB86E322A00334D00CE3A48 /* FinancialApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB86E302A00334D00CE3A48 /* FinancialApp.xcdatamodeld */; };
 		CEB86E342A00334E00CE3A48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB86E332A00334E00CE3A48 /* Assets.xcassets */; };
 		CEB86E372A00334E00CE3A48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB86E352A00334E00CE3A48 /* LaunchScreen.storyboard */; };
+		CEDE7CC22A09A65E007306E4 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE7CC12A09A65E007306E4 /* SearchResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CEB86E332A00334E00CE3A48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEB86E362A00334E00CE3A48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEB86E382A00334E00CE3A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEDE7CC12A09A65E007306E4 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		D7D71E8D26C8EB9623597A78 /* Pods-FinancialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialApp.debug.xcconfig"; path = "Target Support Files/Pods-FinancialApp/Pods-FinancialApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F7EAABB6E90FC187F8724C3F /* Pods_FinancialApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 		CEB86E262A00334D00CE3A48 /* FinancialApp */ = {
 			isa = PBXGroup;
 			children = (
+				CEDE7CC02A09A644007306E4 /* model */,
 				CE4EA7472A030A0200D5822C /* Service */,
 				CE4EA7442A02D49200D5822C /* View */,
 				CE4EA7432A02D48800D5822C /* Controller */,
@@ -122,6 +125,14 @@
 				CEB86E302A00334D00CE3A48 /* FinancialApp.xcdatamodeld */,
 			);
 			path = FinancialApp;
+			sourceTree = "<group>";
+		};
+		CEDE7CC02A09A644007306E4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				CEDE7CC12A09A65E007306E4 /* SearchResults.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 				CEB86E282A00334D00CE3A48 /* AppDelegate.swift in Sources */,
 				CEB86E2A2A00334D00CE3A48 /* SceneDelegate.swift in Sources */,
 				CEB86E322A00334D00CE3A48 /* FinancialApp.xcdatamodeld in Sources */,
+				CEDE7CC22A09A65E007306E4 /* SearchResults.swift in Sources */,
 				CE4EA7492A030A1200D5822C /* APIService.swift in Sources */,
 				CE4EA7462A02D4A700D5822C /* SearchTableViewCell.swift in Sources */,
 			);
@@ -320,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -374,9 +386,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -398,8 +411,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -413,6 +426,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Debug;
 		};
@@ -430,8 +444,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,6 +459,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Release;
 		};
