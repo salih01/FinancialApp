@@ -9,10 +9,17 @@ import UIKit
 import Combine
 
 class SearchTableViewController: UITableViewController {
+    //MARK: ENUM
+    private enum Mode {
+        case onboarding
+        case search
+    }
+    
 
     var apiService = APIService()
     private var subscribers = Set<AnyCancellable>()
     @Published private var searchQuery = String() //@Published özniteliği, değeri yayınlamak ve yayıncı-abone modelini kullanmak için hızlı ve basit bir yol sağlar. Değerin değiştiğini otomatik olarak algılayabilir ve dinleyicilere bu değişiklikleri bildirebilirsiniz.
+    @Published private var mode :Mode = .onboarding
     private var searchResults:SearchResults?
     private lazy var searchController:UISearchController = {
         let sc = UISearchController(searchResultsController: nil)
@@ -50,6 +57,21 @@ class SearchTableViewController: UITableViewController {
                     self.tableView.reloadData()
                 }.store(in: &self.subscribers)
             }.store(in: &subscribers) //.store(in: &subscribers): sink operatörüne eklenen değerler, subscribers isimli bir koleksiyonda saklanır. Bu, yayıncının hala aktif olduğu sürece bellekte tutulmasını sağlar ve hafıza sızıntısını önler.
+        
+        $mode.sink { [unowned self] (mode) in
+            switch mode {
+            case .onboarding:
+                let redView = UIView()
+                redView.backgroundColor = .red
+                self.tableView.backgroundView = redView
+            
+            case .search:
+                self.tableView.backgroundColor = nil
+                
+            }
+        }.store(in: &subscribers)
+
+
 
     }
     
